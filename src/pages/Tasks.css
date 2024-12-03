@@ -1,0 +1,165 @@
+/* Estilos para la página de tareas */
+.tasks-container {
+    font-family: Arial, sans-serif;
+    text-align: left;
+    background-color: #f0f4f8; /* Fondo más claro */
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+    overflow: hidden; /* Evita el desbordamiento */
+    max-width: 90%; /* Limita el ancho al 90% de la pantalla */
+    height: auto; /* Permite que el contenedor crezca con el contenido */
+    max-height: 70vh; /* Altura máxima para que sea scrollable */
+    margin: 0 auto; /* Centra el contenedor */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido desde arriba */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    overflow-y: auto; /* Permite scroll vertical cuando el contenido es más grande */
+    overflow-x: visible; /* Permite el desplazamiento lateral */
+    
+}
+
+/* Centrado dinámico en pantallas más grandes */
+@media (min-width: 769px) {
+    .tasks-container {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+h2 {
+    color: #1358b8; /* Título más oscuro */
+    text-align: center; /* Centra el título */
+    width: 100%; /* Asegura que el h2 ocupe todo el ancho del contenedor */
+}
+
+h3 {
+    color: #11244e;
+    align-self: center;
+}
+
+p {
+    color: black;
+}
+
+.tasks-header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px; /* Puedes ajustar el ancho máximo según tus preferencias */
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.tasks-header h2 {
+    text-align: center;
+    font-size: 20px;
+    width: 100%; /* Asegura que el título del día ocupe el espacio disponible */
+}
+
+.tasks-list {
+    width: 100%; /* Asegura que ocupe el 100% del ancho */
+    box-sizing: border-box;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+strong {
+    color: #1358b8;
+}
+
+.task-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9fafb; /* Fondo más claro para cada tarea */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    overflow-x: auto; /* Habilita el scroll horizontal */
+    white-space: nowrap; /* Evita que el texto se ajuste automáticamente a nuevas líneas */
+}
+
+.task-item h3, .task-item p {
+    display: inline-block; /* Asegura que los elementos no se expandan al 100% */
+    white-space: nowrap; /* Fuerza el contenido a mantenerse en una línea */
+    overflow-x: auto; /* Habilita el scroll horizontal para el texto largo */
+    text-overflow: ellipsis; /* Opcional: agrega puntos suspensivos si el scroll no es visible */
+    max-width: 100%; /* Asegura que no se exceda del contenedor padre */
+}
+
+
+.task-item p {
+    font-size: 1rem;
+    color: #4b5563; /* Gris oscuro para la descripción */
+    margin: 5px 0;
+}
+
+.task-item .task-date {
+    font-size: 0.9rem;
+    color: #9ca3af; /* Gris más claro para la fecha */
+    margin-top: 5px;
+}
+
+.task-item .task-completed {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.task-item .task-completed input {
+    margin-right: 8px;
+}
+
+button {
+    background-color: #1f2937; /* Botón oscuro */
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #374151; /* Hover con un tono más claro */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .tasks-container {
+        max-width: 100%; /* Ajusta el ancho del contenedor */
+        margin: 0 auto; /* Centra el contenedor automáticamente */
+        margin-left: 10px; /* Añade margen adicional a la izquierda */
+        margin-right: 10px; /* Añade margen adicional a la derecha */
+        margin-top: 25%;
+        transform: none;
+        position: static;
+    }
+}
+
+@media (max-width: 480px) {
+    .tasks-container {
+        max-width: 100%; /* Reduce ligeramente el ancho */
+        margin: 0 auto;
+        margin-left: 15px; /* Margen uniforme a los lados */
+        margin-right: 15px;
+        margin-top: 30%;
+        
+    }
+}
+
+@media (max-width: 365px) {
+    .tasks-container {
+        max-width: 100%; /* Reduce el ancho para dispositivos muy pequeños */
+        margin: 0 auto;
+        margin-left: 20px; /* Más margen a los lados */
+        margin-right: 20px;
+        margin-top: 35%;
+    }
+}

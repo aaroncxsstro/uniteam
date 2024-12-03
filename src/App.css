@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: white; /* Cambiar el texto a blanco para visibilidad */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+
+.Logo {
+  height: 400px;
+  pointer-events: none;
+}
+
+
+
+.App-link {
+  color: #61dafb;
+}

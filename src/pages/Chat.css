@@ -1,0 +1,170 @@
+.chat-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f4f8;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 100%;
+    height: calc(100vh - 120px); /* Ajusta la altura a 100vh menos la altura del nav */
+    margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+  }
+  
+  
+  .contact-list {
+    width: 30%;
+    padding-right: 20px;
+    max-height: 100%; /* Asegura que ocupe toda la altura disponible */
+    overflow-y: auto; /* Permite el scroll si el contenido excede el área visible */
+  }
+
+.contact-list h3 {
+    color: #1f2937;
+    text-align: center;
+}
+
+.contact-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.contact-list li {
+    color: #1f2937;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.contact-list li:hover {
+    background-color: #2563eb;
+    color: white;
+}
+
+.chat-window {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ocupa toda la altura disponible */
+    max-height: 100%; /* Evita que se desborde verticalmente */
+  }
+
+.chat-window h3 {
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.messages {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    max-height: calc(100% - 100px); /* Restamos espacio para la caja de entrada */
+    overflow-y: auto; /* Permite el scroll si los mensajes exceden el área visible */
+    margin-bottom: 20px;
+    flex-grow: 1; /* Expande la sección de mensajes para que ocupe el máximo espacio disponible */
+  }
+
+.message {
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Hace que el texto largo se divida y pase a la siguiente línea */
+    white-space: normal; /* Permite que el texto se ajuste al contenedor y no se desborde */
+}
+
+
+.message.sent {
+    text-align: right;
+}
+
+.message.received {
+    text-align: left;
+}
+
+.timestamp {
+    font-size: 0.8rem;
+    color: #9ca3af;
+}
+
+.message-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Asegura que la caja de entrada siempre quede al final */
+    flex-wrap: nowrap; /* Evita que el input y el botón se muevan a nuevas líneas */
+}
+
+.message-input input {
+    flex-grow: 1; /* El input se expande para ocupar el espacio disponible */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    max-width: calc(100% - 60px); /* Hace que el input sea más pequeño al reducir la pantalla */
+    min-width: 150px; /* Establece un tamaño mínimo para el input */
+    box-sizing: border-box; /* Asegura que padding y border no aumenten el tamaño total */
+}
+
+.message-input button {
+    width: 60px; /* Fija el tamaño del botón */
+    background-color: #2563eb;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 3px;
+    margin-right: 3px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+}
+
+.message-input button:hover {
+    background-color: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        margin-top: 15%;
+        padding-bottom: 50px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        margin-top: 20%;
+        padding-bottom: 50px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .chat-container {
+        margin-top: 28%;
+        padding-bottom: 50px;
+    }
+
+}
+
+/* Animación pop-up */
+@keyframes popup {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Mensajes enviados con la animación */
+  .message.sent {
+    text-align: right;
+    animation: popup 0.3s ease-out; /* Aplicar la animación */
+  }
+  

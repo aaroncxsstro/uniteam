@@ -1,0 +1,100 @@
+.Nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #f0f4f8; /* Fondo claro */
+    color: #1f2937; /* Texto oscuro */
+    z-index: 10;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07); /* Sombra */
+}
+
+
+.Nav-logo img {
+    height: 80px;
+}
+
+.icon {
+    height: 20px;
+}
+
+.Nav-links {
+    display: flex;
+    gap: 1rem;
+    margin-right: 150px;
+}
+
+.Nav-links li {
+    list-style: none;
+    margin-right: 10%;
+}
+
+.Nav-links li:hover {
+    text-decoration:underline;
+}
+
+.Nav-links a {
+    text-decoration: none;
+    color: #1f2937; /* Texto oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Nav-links .icon {
+    font-size: 1.5rem;
+}
+
+.Nav-links .label {
+    font-size: 1rem;
+}
+
+/* Estilo para el link activo */
+.Nav-links .active a {
+    font-weight: bold;
+    color: #2563eb; /* Azul vivo para el enlace activo */
+}
+/* Vista móvil: navegación arriba centrada */
+@media (max-width: 768px) {
+    .Nav {
+        flex-direction: row; /* Alineación horizontal */
+        align-items: center; /* Centrado vertical */
+        justify-content: center; /* Centrado horizontal */
+        padding: 1rem; /* Espaciado alrededor */
+        position: fixed; /* Fijo en la parte superior */
+        top: 0;
+        left: 0;
+        right: -30%;
+        background-color: #f0f4f8; /* Fondo claro */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.07); /* Mantener sombra */
+        margin-bottom: 500px;
+    }
+
+    .Nav-logo {
+        display: none; /* Ocultar el logo en dispositivos móviles */
+    }
+
+    .Nav-links {
+        display: flex; /* Asegura que los enlaces sean flexibles */
+        justify-content: center; /* Centra los enlaces horizontalmente */
+        align-items: center; /* Centrado vertical */
+        width: 100%; /* Ocupa todo el ancho disponible */
+        gap: 1rem; /* Espaciado uniforme entre los enlaces */
+    }
+
+    .Nav-links li {
+        margin: 0; /* Elimina márgenes adicionales */
+    }
+
+    .Nav-links a {
+        flex-direction: column; /* Ícono y texto en columna */
+        justify-content: center; /* Centrado del contenido interno */
+        align-items: center; /* Alinea íconos y texto al centro */
+        gap: 0.5rem; /* Espaciado entre ícono y texto */
+        text-align: center; /* Centra el texto */
+    }
+
+    .Nav-links .label {
+        font-size: 0.8rem; /* Ajusta el tamaño de texto en móviles */
+    }
+}
