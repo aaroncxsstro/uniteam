@@ -4,7 +4,7 @@ import './Chat.css';
 import Nav from '../components/Nav';
 
 function Chat() {
-  const [contacts, setContacts] = useState([
+  const [contacts] = useState([
     { name: 'Joao Pedro Dias', id: 1 },
     { name: 'Antonio Manuel Amaro Calheiros', id: 2 },
     { name: 'Ana Paula do Canto Lopes', id: 3 },
@@ -12,7 +12,6 @@ function Chat() {
     { name: 'Sara Rute Monteiro', id: 5 },
   ]);
   
-  // Inicializa el primer contacto como seleccionado por defecto
   const [selectedContact, setSelectedContact] = useState(contacts[0]);
   
   const [messages, setMessages] = useState(() => {
